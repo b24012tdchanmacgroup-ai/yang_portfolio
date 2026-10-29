@@ -1115,16 +1115,8 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
 #gas-case-study .gas-solution{border:1px solid var(--gas-line);background:#12111d;border-radius:12px;padding:1rem .8rem;}
 #gas-case-study .gas-solution h5{font-size:.65rem;color:var(--gas-accent);margin:0 0 .7rem;}
 #gas-case-study .gas-solution p{font-size:.74rem;line-height:1.7;color:#c5c0d3;margin:0;}
-#gas-case-study .gas-editor{display:flex;justify-content:flex-end;gap:.5rem;flex-wrap:wrap;margin:0 0 1.3rem;align-items:center;}
-#gas-case-study .gas-editor button,#gas-case-study .gas-replace{font:inherit;font-size:.7rem;border:1px solid #584380;background:#211b32;color:#d8ccfa;border-radius:8px;padding:.45rem .75rem;cursor:pointer;}
-#gas-case-study .gas-editor-status{font-size:.68rem;color:var(--gas-muted);}
-#gas-case-study .gas-replace{display:none;position:absolute;bottom:.5rem;right:.5rem;background:rgba(17,13,27,.92);}
-#gas-case-study.gas-editing [data-gas-edit]{outline:1px dashed #79639b;outline-offset:4px;border-radius:2px;cursor:text;}
-#gas-case-study.gas-editing .gas-replace{display:block;}
-#gas-case-study .gas-editor [hidden]{display:none;}
 @media(max-width:900px){#gas-case-study .gas-top{grid-template-columns:1fr;gap:1.5rem;}#gas-case-study .gas-cases{grid-template-columns:repeat(2,minmax(0,1fr));}#gas-case-study .gas-pipeline{grid-template-columns:repeat(3,minmax(0,1fr));}#gas-case-study .gas-solutions{grid-template-columns:repeat(3,minmax(0,1fr));}#gas-case-study .gas-step::after{display:none;}#gas-case-study .gas-resolution-row{grid-template-columns:1fr;gap:.5rem;}}
 @media(max-width:480px){#gas-case-study .gas-pipeline,#gas-case-study .gas-solutions{grid-template-columns:1fr 1fr;}#gas-case-study .gas-cases{gap:.7rem;}#gas-case-study .gas-case-body{padding:.8rem .65rem;}#gas-case-study .gas-section{margin-top:2.8rem;}#gas-case-study .gas-section-head{gap:.75rem;}#gas-case-study .gas-resolution-row>div{gap:.7rem;}}
-@media print{#gas-case-study .gas-editor,#gas-case-study .gas-replace{display:none!important;}#gas-case-study [data-gas-edit]{outline:none!important;}}
 
 #gas-case-study .gas-step{transition:background-color .2s,border-color .2s,box-shadow .2s;}
 #gas-case-study .gas-step.is-active{background:#292145;border-color:#9274dc;box-shadow:0 0 20px rgba(137,100,224,.14);}
@@ -1150,6 +1142,12 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
 #gas-case-study .gas-prompt-text{padding:.25rem 1.5rem 1.5rem;}
 #gas-case-study .gas-prompt-text p{font-size:.94rem;line-height:1.9;color:#d4cfdf;word-break:keep-all;margin:1rem 0 1.5rem;}
 @media(max-width:480px){#gas-case-study .gas-prompt-text{padding:0 1rem 1rem;}#gas-case-study .gas-prompt-text p{font-size:.85rem;}}
+
+.about-main-desc p + p { margin-top:1rem; }
+#gas-case-study .gas-preview { display:block;width:100%;height:100%;object-fit:contain; }
+.airport-preview-button { position:absolute;inset:0;width:100%;height:100%;border:1px solid #584380;background:radial-gradient(ellipse at center,#292145,#0b0a14);color:#f5f2ff;font:inherit;font-size:clamp(.9rem,1.5vw,1.2rem);cursor:pointer;padding:1.5rem; }
+.airport-preview-button span { display:block;margin-bottom:1rem;font-size:2.5rem;color:#b4a4f6; }
+.airport-preview-button:focus-visible { outline:3px solid #b4a4f6;outline-offset:-5px; }
 </style></head>
 <body>
 <div id="cursor"></div>
@@ -1167,7 +1165,7 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
 <!-- ABOUT -->
 <section id="hero" aria-label="양숙영 포트폴리오 표지">
   <div class="hero-bg" role="img" aria-label="Portfolio · Motion Graphic · 3D Visual · Brand Design · Sookyung Yang" style="background-image:url('assets/cj/22e0b01233a6fde333f1.png');"></div>
-<div class="hero-text-wrap" style="position:absolute;bottom:0;left:0;right:0;padding:0.8rem 5vw;background:linear-gradient(transparent,rgba(2,2,11,.9));"><p class="hero-sub" style="font-size:clamp(.65rem,1.3vw,1rem);margin-top:.25rem;">AI CONTENT · MOTION · 3D VISUAL</p><p class="hero-label" style="font-size:clamp(.5rem,.9vw,.7rem);margin:.3rem 0 0;letter-spacing:.04em;text-transform:none;">Generative AI-driven visual storytelling &amp; production</p></div></section>
+<div class="hero-text-wrap" style="position:absolute;bottom:0;left:0;right:0;padding:0.8rem 5vw;background:linear-gradient(transparent,rgba(2,2,11,.9));"><p class="hero-sub" style="font-size:clamp(1rem,2.2vw,1.8rem);margin-top:.25rem;color:#fff;font-weight:600;">AI Content Producer / Motion Designer</p><p class="hero-label" style="font-size:clamp(.85rem,1.4vw,1.1rem);color:#eee;margin:.5rem 0 0;letter-spacing:.04em;text-transform:none;">양숙영 · Sookyung Yang</p></div></section>
 
 <section id="profile"><section id="about">
   <div class="section-wrap">
@@ -1175,7 +1173,7 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
       <span class="section-label">04 — ABOUT — Career · Skills · Tools</span>
       <div class="section-line"></div>
     </div>
-    <div class="about-hero-card fade"><div class="profile-intro"><p class="profile-role">AI Content · Motion · 3D Visual</p><h2 class="about-main-title">메시지를 설계하고,<br>움직임으로 전달합니다.</h2><p class="about-main-desc">기획한 메시지를 AI 콘텐츠, 모션그래픽, 3D 비주얼로 구현하는 양숙영입니다. 생성형 AI 영상 제작과 브랜드 영상의 사전 기획 지원·촬영 현장 보조·후반작업 경험을 바탕으로, 장면의 의도에 맞는 그래픽과 움직임을 구성합니다.</p></div></div>
+    <div class="about-hero-card fade"><div class="profile-intro"><p class="profile-role">AI Content · Motion · 3D Visual</p><h2 class="about-main-title">메시지를 설계하고,<br>움직임으로 전달합니다.</h2><div class="about-main-desc"><p>생성형 AI와 3D·모션그래픽을 결합해 영상 콘텐츠를 기획하고 제작하는 디자이너 양숙영입니다.</p><p>브랜드 영상의 사전 기획부터 합성·후반 제작까지 경험했으며, 최근에는 AI 기반 콘텐츠의 콘티 설계, 이미지·영상 생성, 장면 연출 및 최종 편집까지 제작 전 과정을 수행하고 있습니다.</p><p>AI 생성 과정에서 발생하는 캐릭터 일관성, 동작 오류, 장면 연결 문제를 반복 테스트와 제작 규칙 개선으로 해결하며, 새로운 기술을 실제 제작 워크플로에 적용하고 있습니다.</p></div></div></div>
 
 
 <div class="strengths-grid"><article><h3>MOTION GRAPHIC</h3><p>타이포그래피, 그래픽, 장면 전환의 리듬으로 메시지의 흐름을 만듭니다.</p></article><article><h3>BRAND &amp; DIGITAL VISUAL</h3><p>브랜드의 톤과 제품의 특성을 반영해 영상과 웹 화면에 맞는 비주얼을 구성합니다.</p></article><article><h3>3D &amp; AI WORKFLOW</h3><p>3D와 생성형 AI로 시각 소재를 확장하고, 합성과 모션 작업으로 완성합니다.</p></article></div><div class="program-icons-block">
@@ -1223,6 +1221,8 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
           <span class="ai-badge">Midjourney</span>
           <span class="ai-badge">Envato AI</span>
           <span class="ai-badge">Wan AI</span>
+          <span class="ai-badge">Kling</span>
+          <span class="ai-badge">Seedance (씨덴스)</span>
           <span class="ai-badge">Meshy 3D</span>
           <span class="ai-badge">Google Flow</span>
           <span class="ai-badge">Adobe Firefly</span>
@@ -1254,12 +1254,12 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
           <span>2024년도 졸업</span>
         </div>
       </div>
-      <div class="about-card fade">
-        <p class="about-card-label">Award</p>
+      <div class="about-card full fade" id="awards">
+        <p class="about-card-label">Awards · 수상 경력</p>
         <div class="about-card-content">
-          <span>기후위기 UCC공모전 수상</span>
+          <span>기후위기 UCC공모전 · 우수상</span>
           <span style="font-size:0.74rem;color:rgba(255,255,255,0.35);">2022 · 아시아기후변화교육센터</span>
-          <span style="margin-top:0.6rem;display:block;">대한민국현대조형미술대전 수상</span>
+          <span style="margin-top:0.6rem;display:block;">대한민국현대조형미술대전 · 입상</span>
           <span style="font-size:0.74rem;color:rgba(255,255,255,0.35);">2023 · 대한민국현대조형미술대전</span>
         </div>
       </div>
@@ -1311,7 +1311,7 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
         </div>
         <div class="career-role-row">
           <div class="career-role-item"><strong>소속</strong>영상 디자인팀</div>
-          <div class="career-role-item"><strong>주요 직무</strong>메이저 대기업 B2B/B2C 홍보 영상 기획 및 모션그래픽 제작</div>
+          <div class="career-role-item"><strong>주요 직무</strong>현대자동차·메르세데스-벤츠 등 기업 브랜드 홍보 및 프로모션 영상</div>
         </div>
         <div class="career-achievements"><div class="achievement-block"><div class="achievement-title">브랜드 영상 및 모션그래픽 제작</div><ul class="achievement-list"><li>현대자동차, 메르세데스-벤츠 등 브랜드 홍보·신차 공개·프로모션 콘텐츠 제작 참여.</li><li>기획 및 스토리보드 작업부터 2D·3D 그래픽, 합성, 자막 디자인과 후반 편집까지 수행.</li><li>브랜드 가이드와 클라이언트 피드백을 반영해 화면과 모션을 조정.</li></ul></div></div>
       </div>
@@ -1330,20 +1330,14 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
 </section>
 
 <section id="works"><section id="ai-production" class="portfolio-chapter size-large"><header class="chapter-heading"><span>01</span><h2>AI CONTENT PRODUCTION<br><small style="font-size:.45em;font-weight:400;letter-spacing:.03em;">Generative AI · Directing · Production</small></h2></header><article id="gas-case-study" class="work-card" style="--gas-reference:url('assets/cj/49857ea5a34d58ce9a63.png');">
-  <div class="gas-editor" data-gas-editor>
-    <span class="gas-editor-status" role="status" aria-live="polite">텍스트·이미지를 직접 수정할 수 있습니다.</span>
-    <button type="button" data-gas-toggle aria-pressed="false">내용 편집</button>
-    <button type="button" data-gas-export>수정본 HTML 저장</button>
-    <input type="file" accept="image/*" data-gas-upload hidden>
-  </div>
   <div class="gas-top">
     <div class="gas-film"><iframe src="https://drive.google.com/file/d/1BC-qiL3l2wg7I_DrgXMKExpCGSjPQDfi/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="오늘은 당신이 최고의 히어로 · 1분 32초"></iframe></div>
     <div>
-      <p class="gas-eyebrow" data-gas-edit>CASE STUDY 01 · AI NARRATIVE FILM</p>
-      <h3 class="gas-title" data-gas-edit>오늘은 당신이 최고의 히어로</h3>
-      <p class="gas-subtitle" data-gas-edit>가스안전 공익광고&nbsp; | &nbsp;1분 32초</p>
-      <p class="gas-intro" data-gas-edit>히어로 액션과 현실 반전을 결합해 반려동물로 인한 가스호스 훼손 위험과 안전가스호스·보호 커버의 필요성을 전달한 AI 기반 3D 애니메이션입니다.</p>
-      <div class="gas-badges"><span class="gas-badge" data-gas-edit>ROLE&nbsp; 기획·연출·편집</span></div>
+      <p class="gas-eyebrow">CASE STUDY 01 · AI NARRATIVE FILM</p>
+      <h3 class="gas-title">오늘은 당신이 최고의 히어로</h3>
+      <p class="gas-subtitle">가스안전 공익광고&nbsp; | &nbsp;1분 32초</p>
+      <p class="gas-intro">히어로 액션과 현실 반전을 결합해 반려동물로 인한 가스호스 훼손 위험과 안전가스호스·보호 커버의 필요성을 전달한 생성형 AI를 활용한 3D 스타일 애니메이션입니다.</p>
+      <div class="gas-badges"><span class="gas-badge">ROLE&nbsp; 기획·연출·편집</span></div>
       <div class="contrib-row-unified" style="margin-top:1rem;">
             <span class="contrib-label-left">기여도</span>
             <div class="contrib-ring-dark" data-pct="100">
@@ -1358,53 +1352,53 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
 
   </div>
   <section class="gas-section" aria-labelledby="gas-pipeline-heading">
-    <header class="gas-section-head"><span class="gas-section-no">01</span><div><h4 id="gas-pipeline-heading" data-gas-edit>PRODUCTION PIPELINE</h4></div></header>
+    <header class="gas-section-head"><span class="gas-section-no">01</span><div><h4 id="gas-pipeline-heading">PRODUCTION PIPELINE</h4></div></header>
     <div class="gas-pipeline">
-<div class="gas-step is-active" data-gas-step="0"><b>01</b><h5 data-gas-edit>기획·콘티</h5><p class="gas-step-tools" data-gas-edit>Tool · Claude</p><p data-gas-edit>서사 구조와 반전을 설계하고, 기획 의도에 맞게 이야기의 흐름과 장면 구성을 검토했습니다.</p></div>
-<div class="gas-step" data-gas-step="1"><b>02</b><h5 data-gas-edit>에셋 기준화</h5><p class="gas-step-tools" data-gas-edit>Tool · Reference Analysis</p><p data-gas-edit>가스안전공사의 기존 캐릭터와 영상을 분석해 캐릭터 외형, 배경 스타일, 색감 등 영상 제작 규칙을 설정했습니다.</p></div>
-<div class="gas-step" data-gas-step="2"><b>03</b><h5 data-gas-edit>이미지 생성</h5><p class="gas-step-tools" data-gas-edit>Tool · ChatGPT · Midjourney</p><p data-gas-edit>설정한 제작 규칙을 바탕으로 장면별 배경과 소품을 생성하고, 영상 제작에 필요한 이미지 에셋을 구축했습니다.</p></div>
-<div class="gas-step" data-gas-step="3"><b>04</b><h5 data-gas-edit>영상 생성</h5><p class="gas-step-tools" data-gas-edit>Tool · Google Flow · Veo · Omni</p><p data-gas-edit>이미지를 영상으로 구현하고, 캐릭터 동작과 카메라 움직임, 장면 간 연결성을 반복적으로 수정했습니다.</p></div>
-<div class="gas-step" data-gas-step="4"><b>05</b><h5 data-gas-edit>편집·후반 작업</h5><p class="gas-step-tools" data-gas-edit>Tool · After Effects · Suno AI · ElevenLabs</p><p data-gas-edit>After Effects로 합성, 텍스트 모션과 컬러를 보정하고, Suno AI로 BGM을 제작했습니다. ElevenLabs로 효과음을 추가해 영상의 완성도를 높였습니다.</p></div>
+<div class="gas-step is-active" data-gas-step="0"><b>01</b><h5>기획·콘티</h5><p class="gas-step-tools">Tool · Claude</p><p>서사 구조와 반전을 설계하고, 기획 의도에 맞게 이야기의 흐름과 장면 구성을 검토했습니다.</p></div>
+<div class="gas-step" data-gas-step="1"><b>02</b><h5>에셋 기준화</h5><p class="gas-step-tools">Tool · Reference Analysis</p><p>가스안전공사의 기존 캐릭터와 영상을 분석해 캐릭터 외형, 배경 스타일, 색감 등 영상 제작 규칙을 설정했습니다.</p></div>
+<div class="gas-step" data-gas-step="2"><b>03</b><h5>이미지 생성</h5><p class="gas-step-tools">Tool · ChatGPT · Midjourney</p><p>설정한 제작 규칙을 바탕으로 장면별 배경과 소품을 생성하고, 영상 제작에 필요한 이미지 에셋을 구축했습니다.</p></div>
+<div class="gas-step" data-gas-step="3"><b>04</b><h5>영상 생성</h5><p class="gas-step-tools">Tool · Google Flow · Veo · Omni</p><p>이미지를 영상으로 구현하고, 캐릭터 동작과 카메라 움직임, 장면 간 연결성을 반복적으로 수정했습니다.</p></div>
+<div class="gas-step" data-gas-step="4"><b>05</b><h5>편집·후반 작업</h5><p class="gas-step-tools">Tool · After Effects · Suno AI · ElevenLabs</p><p>After Effects로 합성, 텍스트 모션과 컬러를 보정하고, Suno AI로 BGM을 제작했습니다. ElevenLabs로 효과음을 추가해 영상의 완성도를 높였습니다.</p></div>
 </div>
-<div class="gas-tools"><span class="gas-tools-label">TOOLS</span><span class="gas-tool is-active" data-gas-tool-step="0" data-gas-edit>Claude</span><span class="gas-tool" data-gas-tool-step="2" data-gas-edit>ChatGPT</span><span class="gas-tool" data-gas-tool-step="2" data-gas-edit>Midjourney</span><span class="gas-tool" data-gas-tool-step="3" data-gas-edit>Google Flow</span><span class="gas-tool" data-gas-tool-step="3" data-gas-edit>Veo / Omni</span><span class="gas-tool" data-gas-tool-step="4" data-gas-edit>After Effects</span><span class="gas-tool" data-gas-tool-step="4" data-gas-edit>Suno AI</span><span class="gas-tool" data-gas-tool-step="4" data-gas-edit>ElevenLabs</span></div>
+<div class="gas-tools"><span class="gas-tools-label">TOOLS</span><span class="gas-tool is-active" data-gas-tool-step="0">Claude</span><span class="gas-tool" data-gas-tool-step="2">ChatGPT</span><span class="gas-tool" data-gas-tool-step="2">Midjourney</span><span class="gas-tool" data-gas-tool-step="3">Google Flow</span><span class="gas-tool" data-gas-tool-step="3">Veo / Omni</span><span class="gas-tool" data-gas-tool-step="4">After Effects</span><span class="gas-tool" data-gas-tool-step="4">Suno AI</span><span class="gas-tool" data-gas-tool-step="4">ElevenLabs</span></div>
   </section>
   <section class="gas-section" aria-labelledby="gas-character-heading">
-    <header class="gas-section-head"><span class="gas-section-no">02</span><div><h4 id="gas-character-heading" data-gas-edit>CASE 01 CHARACTER CONSISTENCY</h4><p data-gas-edit>같은 샷 기준: 콘티 → 최초 결과 → 문제 분석 → 수정 결과</p></div></header>
+    <header class="gas-section-head"><span class="gas-section-no">02</span><div><h4 id="gas-character-heading">CASE 01 CHARACTER CONSISTENCY</h4><p>같은 샷 기준: 콘티 → 최초 결과 → 문제 분석 → 수정 결과</p></div></header>
     <div class="gas-cases">
-      <div class="gas-case"><div class="gas-capture" data-gas-image="character-storyboard" role="img" aria-label="소멍이 변신 장면" style="background-image:url('assets/cj/eb133064d4c1d64d6dcc.jpg');background-size:contain;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"><button type="button" class="gas-replace">이미지 교체</button></div><div class="gas-case-body"><h5 data-gas-edit>A. STORYBOARD</h5><p data-gas-edit>아동형 소멍이가 가스레인저로 변신하는 구도</p></div></div>
-      <div class="gas-case"><div class="gas-capture" data-gas-image="character-first" role="img" aria-label="최초 생성 결과 · 성인 체형과 의상 변화" style="background-image:url('assets/cj/6d4aa6f36381c3c792cf.jpg');background-size:contain;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"><button type="button" class="gas-replace">이미지 교체</button></div><div class="gas-case-body"><h5 class="problem" data-gas-edit>B. FIRST GENERATION</h5><p data-gas-edit>캐릭터가 성인 체형으로 커지고 얼굴·의상이 변형됨</p></div></div>
-      <div class="gas-case"><div class="gas-capture" data-gas-image="character-control" role="img" aria-label="캐릭터 수정 과정" style="background-image:url('assets/cj/bd59a0016c6e53095721.jpg');background-size:contain;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"><button type="button" class="gas-replace">이미지 교체</button></div><div class="gas-case-body"><h5 data-gas-edit>C. CONTROL</h5><p data-gas-edit>레퍼런스 고정 / 아동 비율 명시 / 얼굴 노출 금지 / 배경 변경 금지</p></div></div>
-      <div class="gas-case"><div class="gas-capture" data-gas-image="character-final" role="img" aria-label="최종 캐릭터 외형" style="background-image:url('assets/cj/f3bc4da42d34dc1cf6b5.jpg');background-size:contain;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"><button type="button" class="gas-replace">이미지 교체</button></div><div class="gas-case-body"><h5 class="solved" data-gas-edit>D. FINAL SHOT</h5><p data-gas-edit>체형과 의상을 유지하며 변신 동작과 카메라 무빙 구현</p></div></div>
+      <div class="gas-case"><div class="gas-capture" data-gas-image="character-storyboard" role="img" aria-label="소멍이 변신 장면" style="background-image:url('assets/cj/eb133064d4c1d64d6dcc.jpg');background-size:contain;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"></div><div class="gas-case-body"><h5>A. STORYBOARD</h5><p>아동형 소멍이가 가스레인저로 변신하는 구도</p></div></div>
+      <div class="gas-case"><div class="gas-capture" data-gas-image="character-first" role="img" aria-label="최초 생성 결과 · 성인 체형과 의상 변화" style="background-image:url('assets/cj/6d4aa6f36381c3c792cf.jpg');background-size:contain;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"></div><div class="gas-case-body"><h5 class="problem">B. FIRST GENERATION</h5><p>캐릭터가 성인 체형으로 커지고 얼굴·의상이 변형됨</p></div></div>
+      <div class="gas-case"><div class="gas-capture" data-gas-image="character-control" role="img" aria-label="캐릭터 수정 과정" style="background-image:url('assets/cj/bd59a0016c6e53095721.jpg');background-size:contain;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"></div><div class="gas-case-body"><h5>C. CONTROL</h5><p>레퍼런스 고정 / 아동 비율 명시 / 얼굴 노출 금지 / 배경 변경 금지</p></div></div>
+      <div class="gas-case"><div class="gas-capture" data-gas-image="character-final" role="img" aria-label="최종 캐릭터 외형" style="background-image:url('assets/cj/f3bc4da42d34dc1cf6b5.jpg');background-size:contain;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"></div><div class="gas-case-body"><h5 class="solved">D. FINAL SHOT</h5><p>체형과 의상을 유지하며 변신 동작과 카메라 무빙 구현</p></div></div>
     </div>
-    <div class="gas-resolution"><div class="gas-resolution-row"><div><b>PROBLEM</b><div><strong data-gas-edit>캐릭터 아이덴티티 불일치</strong><p data-gas-edit>최초 생성 결과에서 캐릭터가 성인 체형으로 변하고 얼굴과 의상 디테일이 달라져, 기존 캐릭터의 특징이 유지되지 않았습니다.</p></div></div><div><b class="solved">SOLUTION</b><div><strong data-gas-edit>레퍼런스 기반 캐릭터 일관성 확보</strong><p data-gas-edit>캐릭터 레퍼런스를 고정하고 아동 체형, 의상 유지, 얼굴 노출 금지 조건을 구체화해 장면 간 외형 일관성을 확보했습니다.</p></div></div></div></div>
+    <div class="gas-resolution"><div class="gas-resolution-row"><div><b>PROBLEM</b><div><strong>캐릭터 아이덴티티 불일치</strong><p>최초 생성 결과에서 캐릭터가 성인 체형으로 변하고 얼굴과 의상 디테일이 달라져, 기존 캐릭터의 특징이 유지되지 않았습니다.</p></div></div><div><b class="solved">SOLUTION</b><div><strong>레퍼런스 기반 캐릭터 일관성 확보</strong><p>캐릭터 레퍼런스를 고정하고 아동 체형, 의상 유지, 얼굴 노출 금지 조건을 구체화해 장면 간 외형 일관성을 확보했습니다.</p></div></div></div></div>
 </section>
   <section class="gas-section" aria-labelledby="gas-motion-heading">
-    <header class="gas-section-head"><span class="gas-section-no">03</span><div><h4 id="gas-motion-heading" data-gas-edit>CASE 02 MOTION &amp; CONTINUITY</h4><p data-gas-edit>동작 오류와 장면 연결 문제를 어떻게 해결했는지 제시</p></div></header>
+    <header class="gas-section-head"><span class="gas-section-no">03</span><div><h4 id="gas-motion-heading">CASE 02 MOTION &amp; CONTINUITY</h4><p>AI 생성 과정에서 발생한 동작 오류와 장면 간 불일치를 제어 조건과 반복 테스트로 개선했습니다.</p></div></header>
     <div class="gas-cases">
-      <div class="gas-case"><div class="gas-capture" data-gas-image="motion-storyboard" role="img" aria-label="고양이가 가스호스를 무는 장면 · 반복 GIF" style="background-image:url('assets/cj/44fc7e3b819016fe00d1.gif');background-size:contain;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"><button type="button" class="gas-replace">이미지 교체</button></div><div class="gas-case-body"><h5 data-gas-edit>A. STORYBOARD</h5><p data-gas-edit>고양이가 가스호스를 물고, 보호 호스로 전환되는 장면</p></div></div>
-      <div class="gas-case"><div class="gas-capture" data-gas-image="motion-first" role="img" aria-label="금속 가스호스를 무는 최초 생성 결과 · 반복 GIF" style="background-image:url('assets/cj/21280d2499c50f341238.gif');background-size:contain;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"><button type="button" class="gas-replace">이미지 교체</button></div><div class="gas-case-body"><h5 class="problem" data-gas-edit>B. FIRST GENERATION</h5><p data-gas-edit>고양이 외형이 바뀌고 호스가 찌그러지며 불필요한 동작 발생</p></div></div>
-      <div class="gas-case"><div class="gas-capture" data-gas-image="motion-control" role="img" aria-label="고양이가 흰색 격자무늬 가스호스를 무는 원본 이미지" style="background-image:url('assets/cj/b7b29c073ddedee32f62.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"><button type="button" class="gas-replace">이미지 교체</button></div><div class="gas-case-body"><h5 data-gas-edit>C. CONTROL</h5><p data-gas-edit>고양이·카메라·배경은 고정하고, 호스 재질만 전환하도록 시작·끝 프레임을 지정</p><button type="button" class="gas-prompt-open" aria-haspopup="dialog">프롬프트 원문 보기 ↗</button></div></div>
-      <div class="gas-case"><div class="gas-capture" data-gas-image="motion-final" role="img" aria-label="고양이 호스 장면 최종 결과 · 반복 GIF" style="background-image:url('assets/cj/5ab62ecbfd7c024210a1.gif');background-size:contain;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"><button type="button" class="gas-replace">이미지 교체</button></div><div class="gas-case-body"><h5 class="solved" data-gas-edit>D. FINAL SHOT</h5><p data-gas-edit>고양이 동작은 이어지고 보호 호스는 형태 변화 없이 유지</p></div></div>
+      <div class="gas-case"><div class="gas-capture" data-gas-image="motion-storyboard"  aria-label="고양이가 가스호스를 무는 장면 · 반복 영상" style="aspect-ratio:16/9;"><video class="gas-preview" muted loop playsinline controls preload="none" poster="assets/cj/44fc7e3b819016fe00d1-poster.jpg" data-src="assets/cj/44fc7e3b819016fe00d1.mp4" aria-label="가스안전 제작 과정 비교 영상"></video></div><div class="gas-case-body"><h5>A. STORYBOARD</h5><p>고양이가 가스호스를 물고, 보호 호스로 전환되는 장면</p></div></div>
+      <div class="gas-case"><div class="gas-capture" data-gas-image="motion-first"  aria-label="금속 가스호스를 무는 최초 생성 결과 · 반복 영상" style="aspect-ratio:16/9;"><video class="gas-preview" muted loop playsinline controls preload="none" poster="assets/cj/21280d2499c50f341238-poster.jpg" data-src="assets/cj/21280d2499c50f341238.mp4" aria-label="가스안전 제작 과정 비교 영상"></video></div><div class="gas-case-body"><h5 class="problem">B. FIRST GENERATION</h5><p>고양이 외형이 바뀌고 호스가 찌그러지며 불필요한 동작 발생</p></div></div>
+      <div class="gas-case"><div class="gas-capture" data-gas-image="motion-control" role="img" aria-label="고양이가 흰색 격자무늬 가스호스를 무는 원본 이미지" style="background-image:url('assets/cj/b7b29c073ddedee32f62.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;aspect-ratio:16/9;"></div><div class="gas-case-body"><h5>C. CONTROL</h5><p>고양이·카메라·배경은 고정하고, 호스 재질만 전환하도록 시작·끝 프레임을 지정</p><button type="button" class="gas-prompt-open" aria-haspopup="dialog">프롬프트 원문 보기 ↗</button></div></div>
+      <div class="gas-case"><div class="gas-capture" data-gas-image="motion-final"  aria-label="고양이 호스 장면 최종 결과 · 반복 영상" style="aspect-ratio:16/9;"><video class="gas-preview" muted loop playsinline controls preload="none" poster="assets/cj/5ab62ecbfd7c024210a1-poster.jpg" data-src="assets/cj/5ab62ecbfd7c024210a1.mp4" aria-label="가스안전 제작 과정 비교 영상"></video></div><div class="gas-case-body"><h5 class="solved">D. FINAL SHOT</h5><p>고양이 동작은 이어지고 보호 호스는 형태 변화 없이 유지</p></div></div>
     </div>
-    <div class="gas-resolution"><div class="gas-resolution-row"><div><b>PROBLEM</b><span data-gas-edit>개체 변화 · 호스 변형 · 장면 길이 부족</span></div><div><b class="solved">SOLUTION</b><span data-gas-edit>변경 대상 분리 + 형태 고정 + 타이밍 구간 명시</span></div></div><p class="gas-note" data-gas-edit>프롬프트 전문보다 핵심 제어 문장 3~4개만 보여주는 편이 읽기 쉽습니다.</p></div>
+    <div class="gas-resolution"><div class="gas-resolution-row"><div><b>PROBLEM</b><span>개체 변화 · 호스 변형 · 장면 길이 부족</span></div><div><b class="solved">SOLUTION</b><span>변경 대상 분리 + 형태 고정 + 타이밍 구간 명시</span></div></div><p class="gas-note">GPT를 이용해 프롬프트를 반복 검토하여 기획 방향에 맞춰 영상을 생성했습니다.</p></div>
   </section>
   <section class="gas-section" aria-labelledby="gas-solved-heading">
-    <header class="gas-section-head"><span class="gas-section-no">04</span><div><h4 id="gas-solved-heading" data-gas-edit>WHAT I SOLVED</h4></div></header>
+    <header class="gas-section-head"><span class="gas-section-no">04</span><div><h4 id="gas-solved-heading">WHAT I SOLVED</h4></div></header>
     <div class="gas-solutions">
-      <div class="gas-solution"><h5 data-gas-edit>CHARACTER</h5><p data-gas-edit>캐릭터 외형·비율·의상 일관성</p></div>
-      <div class="gas-solution"><h5 data-gas-edit>BACKGROUND</h5><p data-gas-edit>도시·주방 배경과 색감 유지</p></div>
-      <div class="gas-solution"><h5 data-gas-edit>MOTION</h5><p data-gas-edit>단독 동작과 카메라 움직임 제어</p></div>
-      <div class="gas-solution"><h5 data-gas-edit>CONTINUITY</h5><p data-gas-edit>시작·끝 프레임과 장면 연결</p></div>
-      <div class="gas-solution"><h5 data-gas-edit>QUALITY</h5><p data-gas-edit>오류 분석·반복 생성·후반 보완</p></div>
+      <div class="gas-solution"><h5>CHARACTER</h5><p>캐릭터 외형·비율·의상 일관성</p></div>
+      <div class="gas-solution"><h5>BACKGROUND</h5><p>도시·주방 배경과 색감 유지</p></div>
+      <div class="gas-solution"><h5>MOTION</h5><p>단독 동작과 카메라 움직임 제어</p></div>
+      <div class="gas-solution"><h5>CONTINUITY</h5><p>시작·끝 프레임과 장면 연결</p></div>
+      <div class="gas-solution"><h5>QUALITY</h5><p>오류 분석·반복 생성·후반 보완</p></div>
     </div>
   </section>
-<dialog class="gas-prompt-dialog" aria-labelledby="gas-prompt-title"><header><h4 id="gas-prompt-title">프롬프트 원문</h4><button type="button" aria-label="프롬프트 닫기">닫기 ×</button></header><div class="gas-prompt-text"><p data-gas-edit>첨부한 첫 번째 이미지의 구도, 배경, 조명, 색감과 주황색 반려묘의 외형을 영상 전체에서 완전히 동일하게 유지한다. 고양이의 얼굴, 눈, 귀, 코, 수염, 털색, 줄무늬, 체형과 위치가 전환 과정에서 바뀌거나 다시 생성되면 안 된다.</p>
-<p data-gas-edit>영상 시작 후 전체 길이의 약 20% 동안 고양이가 첫 번째 이미지의 흰색 격자무늬 가스호스를 물고 있는 모습을 보여준다. 이후 전체 길이의 약 10% 이내로 가스호스만 빠르게 페이드 전환하여 두 번째 이미지의 금속 가스호스로 변경한다. 남은 전체 길이의 약 70% 동안 두 번째 이미지의 금속 가스호스를 물고 있는 모습을 충분히 길게 유지한다. 영상 마지막 프레임까지 금속 가스호스 상태를 유지하며 다시 첫 번째 호스로 돌아가지 않는다.</p>
-<p data-gas-edit>고양이에게는 페이드인·페이드아웃을 적용하지 않는다. 고양이의 움직임은 하나의 연속된 영상처럼 자연스럽게 이어지고, 고양이가 물고 있는 가스호스에만 선택적으로 전환 효과를 적용한다. 전환 순간에도 고양이의 얼굴, 입 모양, 머리 위치, 이빨과 호스가 맞닿는 지점을 정확히 고정한다.</p>
-<p data-gas-edit>고양이는 눈에 힘을 준 비장하고 진지한 표정을 유지한다. 호스를 입에서 놓지 않은 채 턱을 위아래로 작게 움직이며 힘주어 2~3회 씹는다. 볼과 입 주변 근육, 머리, 눈과 귀만 자연스럽게 미세하게 움직인다. 고양이가 씹는 힘에 맞춰 가스호스가 아주 조금 떨리지만 위치와 전체 곡선은 유지한다.</p>
-<p data-gas-edit>두 번째 이미지의 금속 가스호스는 매우 단단하게 보호되어 있다. 고양이가 힘껏 물어도 찌그러짐, 눌림, 구멍, 절단, 균열 또는 변형이 전혀 발생하지 않는다.</p>
-<p data-gas-edit>변경되는 대상은 가스호스의 재질과 외형뿐이다. 고양이, 배경, 조명, 구도와 다른 모든 요소는 첫 프레임과 동일하게 유지한다. 추가 캐릭터 및 물체 없음. 고양이 재생성, 외형 변화, 고양이 이중 생성, 고양이에게 적용되는 페이드 효과 금지. 카메라 이동, 흔들림, 줌, 앵글 변화 없음. 과도한 고양이 움직임, 가스호스 파손, 호스를 입에서 놓는 동작 없음.</p>
-<p data-gas-edit>BGM 없음. 고양이가 호스를 씹는 미세한 효과음과 호스가 살짝 떨리는 효과음만 추가한다. 가스호스가 금속 재질로 바뀔 때 별도의 전환 효과음은 넣지 않는다.</p></div></dialog></article>
+<dialog class="gas-prompt-dialog" aria-labelledby="gas-prompt-title"><header><h4 id="gas-prompt-title">프롬프트 원문</h4><button type="button" aria-label="프롬프트 닫기">닫기 ×</button></header><div class="gas-prompt-text"><p>첨부한 첫 번째 이미지의 구도, 배경, 조명, 색감과 주황색 반려묘의 외형을 영상 전체에서 완전히 동일하게 유지한다. 고양이의 얼굴, 눈, 귀, 코, 수염, 털색, 줄무늬, 체형과 위치가 전환 과정에서 바뀌거나 다시 생성되면 안 된다.</p>
+<p>영상 시작 후 전체 길이의 약 20% 동안 고양이가 첫 번째 이미지의 흰색 격자무늬 가스호스를 물고 있는 모습을 보여준다. 이후 전체 길이의 약 10% 이내로 가스호스만 빠르게 페이드 전환하여 두 번째 이미지의 금속 가스호스로 변경한다. 남은 전체 길이의 약 70% 동안 두 번째 이미지의 금속 가스호스를 물고 있는 모습을 충분히 길게 유지한다. 영상 마지막 프레임까지 금속 가스호스 상태를 유지하며 다시 첫 번째 호스로 돌아가지 않는다.</p>
+<p>고양이에게는 페이드인·페이드아웃을 적용하지 않는다. 고양이의 움직임은 하나의 연속된 영상처럼 자연스럽게 이어지고, 고양이가 물고 있는 가스호스에만 선택적으로 전환 효과를 적용한다. 전환 순간에도 고양이의 얼굴, 입 모양, 머리 위치, 이빨과 호스가 맞닿는 지점을 정확히 고정한다.</p>
+<p>고양이는 눈에 힘을 준 비장하고 진지한 표정을 유지한다. 호스를 입에서 놓지 않은 채 턱을 위아래로 작게 움직이며 힘주어 2~3회 씹는다. 볼과 입 주변 근육, 머리, 눈과 귀만 자연스럽게 미세하게 움직인다. 고양이가 씹는 힘에 맞춰 가스호스가 아주 조금 떨리지만 위치와 전체 곡선은 유지한다.</p>
+<p>두 번째 이미지의 금속 가스호스는 매우 단단하게 보호되어 있다. 고양이가 힘껏 물어도 찌그러짐, 눌림, 구멍, 절단, 균열 또는 변형이 전혀 발생하지 않는다.</p>
+<p>변경되는 대상은 가스호스의 재질과 외형뿐이다. 고양이, 배경, 조명, 구도와 다른 모든 요소는 첫 프레임과 동일하게 유지한다. 추가 캐릭터 및 물체 없음. 고양이 재생성, 외형 변화, 고양이 이중 생성, 고양이에게 적용되는 페이드 효과 금지. 카메라 이동, 흔들림, 줌, 앵글 변화 없음. 과도한 고양이 움직임, 가스호스 파손, 호스를 입에서 놓는 동작 없음.</p>
+<p>BGM 없음. 고양이가 호스를 씹는 미세한 효과음과 호스가 살짝 떨리는 효과음만 추가한다. 가스호스가 금속 재질로 바뀔 때 별도의 전환 효과음은 넣지 않는다.</p></div></dialog></article>
 
 <div class="work-card" id="jeju-road-safety">
         <div style="position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 0 60px rgba(124,108,240,0.15);">
@@ -1468,7 +1462,7 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
         </div>
       </div>
 
-      
+
       <div class="work-card" id="brand-event-films"><div class="sw-video-stack"><div class="sw-video-item"><div class="sw-video-label">Mercedes-Benz A-Class MBUX</div><div class="sw-video-wrap"><iframe src="https://player.vimeo.com/video/388449903" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Mercedes-Benz A-Class MBUX"></iframe></div></div>
 <div class="sw-video-item"><div class="sw-video-label">2019 Seoul Motorshow · Vision EQ Silver Arrow Unveiling</div><div class="sw-video-wrap"><iframe src="https://player.vimeo.com/video/332604406" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="2019 Seoul Motorshow · Vision EQ Silver Arrow Unveiling"></iframe></div></div>
 <div class="sw-video-item"><div class="sw-video-label">Africa & Middle East SONATA Unveiling</div><div class="sw-video-wrap"><iframe src="https://player.vimeo.com/video/345823908" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Africa & Middle East SONATA Unveiling"></iframe></div></div></div><div class="card-meta-wrap"><div class="card-chapter">BRAND FILM · 행사 영상 제작 경험</div><h3 class="card-meta-title">메르세데스-벤츠 · 현대자동차 행사 영상</h3><p class="card-meta-desc">브랜드 신차·기능 소개 및 공개 행사 영상 제작에 참여했습니다. 기획·스토리보드 지원과 그래픽·합성·자막 디자인 및 후반 편집 경험을 소개합니다.</p><div class="contrib-row-unified" style="margin-top:1rem;"><span class="contrib-label-left">기여도</span><div class="contrib-ring-dark" data-pct="30"><svg width="52" height="52" viewbox="0 0 52 52"><circle class="ring-bg" cx="26" cy="26" r="20"></circle><circle class="ring-fill" cx="26" cy="26" r="20" stroke-dasharray="125.7" stroke-dashoffset="125.7"></circle></svg><div class="pct-text">30%</div></div></div><div class="tool-tags-dark" style="margin-top:.8rem;"><span class="tool-tag-dark">Cinema 4D</span><span class="tool-tag-dark">After Effects</span><span class="tool-tag-dark">Premiere Pro</span></div></div></div><div class="work-card">
@@ -1495,7 +1489,7 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
         <div style="padding:1rem 0 0;">
           <div class="card-chapter">SOFTWARE &amp; MOTION SYSTEM</div>
           <h3 class="card-meta-title" style="margin:0.4rem 0 0.9rem;">사내 개발 소프트웨어(GAIA, Tova, Eg-bim)<br>홈페이지 소개 영상 제작</h3>
-          <p style="font-size:0.82rem;line-height:1.8;color:rgba(255,255,255,0.45);font-family:'Pretendard',sans-serif;margin-bottom:1rem;">사내에서 개발한 핵심 소프트웨어 3종의 아이덴티티를 확립하고, 웹 브라우저 및 홈페이지 내에서 사용자의 직관적인 이해를 돕기 위한 홍보 모션그래픽 및 인터랙티브 비주얼 가이드 제작.</p>
+          <p style="font-size:0.82rem;line-height:1.8;color:rgba(255,255,255,0.45);font-family:'Pretendard',sans-serif;margin-bottom:1rem;">각 소프트웨어의 특징을 분석해 제품별 모션 비주얼을 기획하고, 웹 브라우저 및 홈페이지 내에서 사용자의 직관적인 이해를 돕기 위한 홍보 모션그래픽 및 인터랙티브 비주얼 가이드 제작.</p>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:0.7rem;margin-bottom:1rem;">
             <li style="font-size:0.8rem;color:rgba(255,255,255,0.45);font-family:'Pretendard',sans-serif;">
               <strong style="color:rgba(255,255,255,0.75);font-weight:600;display:block;margin-bottom:0.2rem;">핵심 수행 업무</strong>
@@ -1515,7 +1509,7 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
               <ul style="list-style:none;padding-left:0.6rem;margin-top:0.3rem;">
                 <li style="position:relative;padding-left:0.8rem;font-size:0.77rem;color:rgba(255,255,255,0.38);line-height:1.7;">
                   <span style="position:absolute;left:0;color:rgba(255,255,255,0.18);">—</span>
-                  텍스트 중심의 어려운 소프트웨어 기능을 2D/3D 모션그래픽 기반의 직관적인 비주얼로 전환하여, 홈페이지에서 주요 기능과 기술적 특징을 직관적으로 전달하도록 구성.
+                  텍스트 중심의 어려운 소프트웨어 기능을 2D/3D 모션그래픽 기반의 직관적인 비주얼로 전환하여, 홈페이지에서 복잡한 기술 정보를 시각적으로 간결하게 전달하도록 구성.
                 </li>
               </ul>
             </li>
@@ -1536,9 +1530,7 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
             <div class="card-chapter">Gov · 공공기관 홍보 영상</div>
             <h3 class="card-meta-title">LH 화재안전성능보강지원사업<br>홍보 영상 제작</h3>
             <ul class="card-meta-desc-list">
-              <li><strong>데이터 기반 경각심 유도 기획</strong>
-                <ul class="sub-list"><li>화재 확률 데이터를 시각화하여 초반 몰입도와 경각심을 높이는 서브 기획 진행.</li></ul>
-              </li>
+              <li>화재 위험 관련 통계 데이터를 영상 초반에 배치하고, 모션그래픽으로 시각화하는 구성안을 제안했습니다.</li>
               <li><strong>짜임새 있는 후반 그래픽 편집 리드</strong>
                 <ul class="sub-list"><li>모션그래픽, 자막 디자인, CG 작업을 주도하여 신뢰감 있는 비주얼 완성.</li></ul>
               </li>
@@ -1558,7 +1550,7 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
 <section id="visualization" class="portfolio-chapter size-large"><header class="chapter-heading"><span>03</span><h2>3D &amp; VFX<br><small style="font-size:.45em;font-weight:400;letter-spacing:.03em;">Unreal Engine · Blender · Visualization</small></h2></header><div class="work-card">
         <div class="card-layout scroll-reveal">
           <div class="card-video-wrap">
-            <iframe src="https://drive.google.com/file/d/1gBvQPh-Vb7NgxgofDCMuwSB6Q9IMrIi9/preview" allow="autoplay" allowfullscreen loading="lazy" title="IRAQ AIRPORT VISUALIZATION"></iframe>
+            <button class="airport-preview-button" type="button" data-airport-preview aria-label="이라크 공항 영상 미리보기 불러오기"><span aria-hidden="true">▶</span>IRAQ AIRPORT VISUALIZATION<br>영상 미리보기 불러오기</button>
           </div>
           <div class="card-meta-wrap">
             <div class="card-chapter"><em>3D Environment &amp; Visualization</em></div>
@@ -1620,13 +1612,13 @@ section[id]{scroll-margin-top:64px;} :focus-visible{outline:2px solid #b0a5f5;ou
 
       <div class="work-card">
         <div style="position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden;">
-          <iframe src="https://drive.google.com/file/d/1WIgRapILqKVTo65yO1ERYO9Jg7ARxCRq/preview" allow="autoplay" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;" loading="lazy" title="바론컨설턴트 2024~2026' Reel"></iframe>
+          <iframe src="https://drive.google.com/file/d/1WIgRapILqKVTo65yO1ERYO9Jg7ARxCRq/preview" allow="autoplay" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;" loading="lazy" title="Baron Consultant · 2024–2026 Showreel"></iframe>
         </div>
         <div class="card-info" style="display:block;padding:1.6rem 1.8rem;">
           <div class="card-chapter" style="color:#f0c040;letter-spacing:0.2em;">✦  SHOWREEL  ✦</div>
-          <h3 class="card-meta-title" style="margin:0.4rem 0 0.8rem;font-size:1.6rem;">바론컨설턴트 2024~2026' Reel</h3>
+          <h3 class="card-meta-title" style="margin:0.4rem 0 0.8rem;font-size:1.6rem;">Baron Consultant · 2024–2026 Showreel</h3>
           <div style="height:1px;background:rgba(124,108,240,0.2);margin:0 0 0.9rem;"></div>
-          <p style="font-size:0.88rem;line-height:1.8;color:rgba(255,255,255,0.55);font-family:'Pretendard',sans-serif;">2024~2026 작업한 Reel영상 편집본입니다.</p>
+          <p style="font-size:0.88rem;line-height:1.8;color:rgba(255,255,255,0.55);font-family:'Pretendard',sans-serif;">2024년부터 2026년까지 참여한 주요 브랜드·기술·3D 영상 프로젝트의 작업 장면을 편집한 쇼릴입니다.</p>
           <div class="tool-tags-dark" style="margin-top:0.9rem;">
             <span class="tool-tag-dark">After Effects</span>
             <span class="tool-tag-dark">Premiere Pro</span>
@@ -1802,49 +1794,7 @@ setTimeout(() => {
   if (overlay) overlay.remove();
 }, 3500);
 </script>
-<script id="gas-case-editor">
-/* Gas case editor: edits stay in the page until exported as a new HTML file. */
-(()=>{
- const root=document.getElementById('gas-case-study');if(!root)return;
- const toggle=root.querySelector('[data-gas-toggle]');
- const status=root.querySelector('.gas-editor-status');
- const upload=root.querySelector('[data-gas-upload]');
- let editing=false,targetImage=null;
- const setEditing=value=>{
-   editing=value;root.classList.toggle('gas-editing',value);
-   root.querySelectorAll('[data-gas-edit]').forEach(el=>{el.contentEditable=value?'true':'false';el.spellcheck=false;});
-   toggle.textContent=value?'편집 마치기':'내용 편집';toggle.setAttribute('aria-pressed',String(value));
-   status.textContent=value?'글자를 눌러 수정하고, 이미지 교체를 선택하세요.':'수정본 HTML 저장을 누르면 변경 내용이 파일로 저장됩니다.';
- };
- toggle.addEventListener('click',()=>setEditing(!editing));
- root.addEventListener('click',event=>{
-   const button=event.target.closest('.gas-replace');if(!button||!editing)return;
-   targetImage=button.closest('[data-gas-image]');upload.value='';upload.click();
- });
- root.addEventListener('paste',event=>{
-   const el=event.target.closest('[data-gas-edit]');if(!editing||!el)return;
-   event.preventDefault();const selection=window.getSelection();if(!selection.rangeCount)return;
-   const range=selection.getRangeAt(0);range.deleteContents();const node=document.createTextNode(event.clipboardData.getData('text/plain'));range.insertNode(node);range.setStartAfter(node);range.collapse(true);selection.removeAllRanges();selection.addRange(range);
- });
- upload.addEventListener('change',()=>{
-   const file=upload.files[0];if(!file||!targetImage)return;
-   if(!file.type.startsWith('image/')){status.textContent='이미지 파일을 선택해 주세요.';return;}
-   const target=targetImage,reader=new FileReader();
-   reader.onload=()=>{target.style.backgroundImage='url("'+reader.result+'")';target.style.backgroundSize='cover';target.style.backgroundPosition='center';target.classList.remove('ref');target.querySelector('.gas-placeholder')?.remove();target.setAttribute('aria-label',file.name);status.textContent='이미지를 교체했습니다. 수정본 HTML 저장으로 보관하세요.';};
-   reader.onerror=()=>{status.textContent='이미지를 읽지 못했습니다. 다시 선택해 주세요.';};reader.readAsDataURL(file);
- });
- root.querySelector('[data-gas-export]').addEventListener('click',()=>{
-   setEditing(false);
-   const copy=document.documentElement.cloneNode(true);
-   copy.querySelectorAll('[src]').forEach(el=>{const v=el.getAttribute('src');if(v&&v.startsWith('assets/cj/'))el.setAttribute('src',new URL(v,document.baseURI).href);});
-   copy.querySelectorAll('[style],style').forEach(el=>{const absolute=v=>v.replace(/assets\/cj\/[a-f0-9]+\.(?:png|jpg|gif|webp|svg)/g,m=>new URL(m,document.baseURI).href);if(el.hasAttribute('style'))el.setAttribute('style',absolute(el.getAttribute('style')));else el.textContent=absolute(el.textContent);});
-   copy.querySelectorAll('#gas-case-study [data-gas-edit]').forEach(el=>el.removeAttribute('contenteditable'));
-   const blob=new Blob(['<!DOCTYPE html>\n'+copy.outerHTML],{type:'text/html;charset=utf-8'});
-   const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='portfolio-cj-edited.html';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);
-   status.textContent='수정본 HTML을 다운로드했습니다.';
- });
-})();
-
+<script id="gas-case-interactions">
 /* Highlight each production step and its tools every second. */
 (()=>{
  const root=document.getElementById('gas-case-study');if(!root)return;
@@ -1865,6 +1815,28 @@ dialog.removeAttribute('open');
 root.querySelector('.gas-prompt-open').addEventListener('click',()=>dialog.showModal());
 dialog.querySelector('button').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+})();
+</script>
+<script>
+// Fetch comparison clips near the viewport and pause them offscreen.
+(() => {
+ const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const clips = document.querySelectorAll('.gas-preview');
+ const loader = new IntersectionObserver(entries => entries.forEach(({target,isIntersecting}) => {
+  if (!isIntersecting) return;
+  if (target.dataset.src) { target.src=target.dataset.src; delete target.dataset.src; target.load(); }
+  loader.unobserve(target);
+ }), {rootMargin:'250px'});
+ const player = new IntersectionObserver(entries => entries.forEach(({target,isIntersecting}) => {
+  if (isIntersecting && !reduced) target.play().catch(() => {}); else target.pause();
+ }), {threshold:.2});
+ clips.forEach(clip => { loader.observe(clip); player.observe(clip); });
+ document.querySelector('[data-airport-preview]')?.addEventListener('click', event => {
+  const frame=document.createElement('iframe');
+  frame.src='https://drive.google.com/file/d/1gBvQPh-Vb7NgxgofDCMuwSB6Q9IMrIi9/preview';
+  frame.title='IRAQ AIRPORT VISUALIZATION'; frame.allow='autoplay; fullscreen'; frame.allowFullscreen=true;
+  event.currentTarget.replaceWith(frame);
+ });
 })();
 </script>
 </body>
